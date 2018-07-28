@@ -1,9 +1,7 @@
-from flask import Blueprint
+from flask import Blueprint,render_template
 
-main=Blueprint('main',__name__)
+main = Blueprint('main',__name__)
 
-
-@main.route('/')    #首页路由
+@main.route('/')
 def index():
-    return 'index'
-
+    return render_template('main/index.html')

@@ -1,0 +1,9 @@
+{% extends 'common/base.html' %}
+{% block title %}
+激活处理
+{% endblock %}
+{% from 'bootstrap/wtf.html' import quick_form %}
+{% block pagecontent %}
+    <div class="page-header"><h2>账户激活操作</h2></div>
+{{ quick_form(form) }}
+{% endblock %}
