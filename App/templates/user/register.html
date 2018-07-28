@@ -1,0 +1,11 @@
+
+
+{% extends 'common/base.html' %}
+{% block title %}
+    注册
+{% endblock %}
+{% from 'bootstrap/wtf.html' import quick_form %}
+{% block pagecontent %}
+    {{ quick_form(form) }}
+{% endblock %}
+
