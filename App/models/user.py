@@ -42,6 +42,16 @@ class User(UserMixin,Base,db.Model):
     email = db.Column(db.String(50))
     icon = db.Column(db.String(40),default='default.jpg')
     confirm = db.Column(db.Boolean,default=False) #当前用户是否激活
+    """
+    参数1  引用关系的模型
+    参数2  backref  反向引用的字段  给posts模型 添加了一个user属性 这个属性是替代uid 来进行对象的查询的 uid这个字段用不上
+    参数3  加载数据条目（如何加载）
+        dynamic  返回query对象  也就是你所看到的sql语句
+        默认是select....  返回 一个列表 装有所有帖子对象的列表
+            不用的原因：不能呢个通过过滤器 再次筛选或者其它操作
+    """
+    # posts = db.relationship('Posts',backref='user',lazy='dynamic')
+    posts = db.relationship('Posts',backref='user',lazy='dynamic')
 
     @property
     def password(self):

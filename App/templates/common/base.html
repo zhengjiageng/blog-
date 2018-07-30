@@ -21,8 +21,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">首页<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">发表博客</a></li>
+                    <li class="active"><a href="{{ url_for('main.index') }}">首页<span class="sr-only">(current)</span></a></li>
+                    <li><a href="{{ url_for('posts.send_posts') }}">发表博客</a></li>
 
                 </ul>
 
@@ -45,6 +45,7 @@
                                 {#           查看信息和修改信息             #}
                                 <li><a href="#">个人中心页面</a></li>
                                 <li><a href="#">个人信息</a></li>
+                                <li><a href="{{ url_for('center.upload') }}">头像</a></li>
                                 <li><a href="#">修改密码</a></li>
                                 <li><a href="#">修改邮箱</a></li>
                                 <li role="separator" class="divider"></li>
